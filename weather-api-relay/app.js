@@ -11,9 +11,9 @@ app.use(cors());
 
 // Routes
 app.get("/", async (req, res) => {
-  let city = req.params.city;
-  let country = req.params.country;
-  let state = req.params.state;
+  let city = req.query.city;
+  let country = req.query.country;
+  let state = req.query.state;
   try {
     const response = await fetch(
       `https://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=${process.env.API_KEY}`
